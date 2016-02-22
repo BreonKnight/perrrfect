@@ -1,32 +1,49 @@
-<h1>Sign up <small> Join us</small></h1>
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label(:first_name, "First Name") %>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
-  <div>
-    <%= f.label(:last_name, "Last Name") %>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.label(:name, "User Name") %>
-    <%= f.text_field :name, placeholder: "User Name" %>
-  </div>
-  <div>
-    <%= f.label(:twitch_name, "Twitch Name") %>
-    <%= f.text_field :twitch_name, placeholder: "Twitch User Name" %>
-  </div>
-  <div>
-    <%= f.label(:email, "Email") %>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.label(:password, "Password") %>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <div >
-    <%= f.label(:avatar, "Upload an avatar") %>
-    <%= f.file_field :avatar %>
-  </div>
-  <%= f.submit "Sign Up" %>
-<% end %>
+<div class="container">
+  <h1 class="center-align">Sign up</h1>
+  <%= form_for @user do |f| %>
+    <div class="row">
+      <div class="col s6">
+        <%= f.label(:first_name, "First Name") %>
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+      <div class="col s6">
+        <%= f.label(:last_name, "Last Name") %>
+        <%= f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.label(:name, "User Name") %>
+        <%= f.text_field :name, placeholder: "User Name" %>
+      </div>
+      <div class="col s6">
+        <%= f.label(:twitch_name, "Twitch User Name") %>
+        <%= f.text_field :twitch_name, placeholder: "Twitch User Name" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <%= f.label(:email, "Email") %>
+        <%= f.text_field :email, placeholder: "Email" %>
+      </div>
+      <div class="col s6">
+        <%= f.label(:password, "Password") %>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col s6">
+          <%= f.label(:avatar, "Upload an avatar") %>
+          <br>
+          <%= f.file_field :avatar %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s7 push-s5">
+          <%= f.submit "Sign Up", class: "btn black" %>
+        </div>
+      </div>
+  <% end %>
+
+</div>
