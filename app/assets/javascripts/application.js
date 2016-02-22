@@ -16,3 +16,5 @@
 //= require angular
 //= require turbolinks
 //= require_tree .
+
+$('.parallax').parallax();

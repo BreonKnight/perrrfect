@@ -13,10 +13,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+  <nav>
+    <div class="nav-wrapper black">
+      <a href="#!" class="brand-logo">Perrfect</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <!-- <% if current_user %> -->
+          <li><%= link_to "Places", places_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Vote", vote_path %></li>
+          <li><%= link_to "Log Out", logout_path %></li>
+        <!-- <% else %> -->
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
+        <!-- <% end %> -->
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <%= yield %>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
