@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = user_params
+    @user = User.create(user_params)
     if @user.save
       flash[:notice] = "Succesfully created account"
       login(@user)
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = @user.errors.full_messages.join(', ')
       redirect_to new_user_path
+    end
   end
 
   def show
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
   end
 
   private
+
     def user_params
       params.require(:user).permit(:first_name, :last_name, :name, :twitch_name, :email, :password, :avatar )
     end

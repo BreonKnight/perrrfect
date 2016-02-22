@@ -15,18 +15,16 @@
 <body>
   <nav>
     <div class="nav-wrapper black">
-      <a href="#!" class="brand-logo">Perrfect</a>
+      <a href="/" class="brand-logo">Perrfect</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <!-- <% if current_user %> -->
-          <li><%= link_to "Places", places_path %></li>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Vote", vote_path %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
-        <!-- <% else %> -->
-          <li><%= link_to "Sign Up", new_user_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-        <!-- <% end %> -->
+          <% if current_user %>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+              <% else %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="sass.html">Sass</a></li>
@@ -36,13 +34,13 @@
       </ul>
     </div>
   </nav>
-  
+
   <!-- Messages for loggin in and out -->
   <% flash.each do |name, msg| %>
   <p>
     <small> <%= name.capitalize %>: <%= msg %> </small>
   </p>
-<% end %>
+  <% end %>
 
 
 <%= yield %>

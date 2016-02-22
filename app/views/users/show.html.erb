@@ -1,7 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="col s12">Hi <%= @user.name %></div>
-    <div class="col s6">This div is 6-columns wide</div>
-    <div class="col s6">This div is 6-columns wide</div>
+    <div class="col s12 center-align">
+      <h1><%= @user.name.upcase %></h1>
+    </div>
+    <div class="col s6">
+      <h3> Fight me <small></small></h3>
+      <%= image_tag @user.avatar.url, size: "320x426", class: "responsive-img" %>
+      <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+      <a href="http//www.twitch.tv/<%=@user.twitch_name %>/profile"><%= @user.twitch_name %></a>
+      <p>Combos added</p>
+    </div>
+    <div class="col s6">
+      <h3>Combos made</h3>
+
+
+    </div>
   </div>
 </div>
