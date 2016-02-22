@@ -22,7 +22,7 @@ class GamesController < ApplicationController
 
   def show
     game_id = params[:id]
-    @game = find_by_title(game_id)
+    @game = Game.find_by_title(game_id)
     render :show
   end
 
@@ -37,7 +37,7 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      params.require(:user).permit(:title, :avatar )
+      params.require(:game).permit(:title, :avatar )
     end
 
 end

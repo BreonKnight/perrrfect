@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   #authenticating user login
   def self.confirm(params)
-  @user = User.find_by({email: params[:email]})
-  @user.try(:authenticate, params[:password])
+    @user = User.find_by({email: params[:email]})
+    @user.try(:authenticate, params[:password])
   end
 end

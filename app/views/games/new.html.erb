@@ -1,29 +1,27 @@
 <div class="container">
   <h1 class="center-align">New Game</h1>
   <div class="row">
-        	<%= form_for @game do |f| %>
-            <div class="input-field col s8">
-              <%= f.label(:title, "Game Title") %>
+    <%= form_for @game do |f| %>
+      <div class="input-field col s6">
+        <%= f.label(:title, "Game Title") %>
+          <br>
+      		<%= f.text_field :title %>
+          <br>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label(:avatar, "Avatar") %>
               <br>
-      				<%= f.text_field :title %>
               <br>
-            </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <p>
-                  Avatar
-                </p>
-                <%= f.file_field :avatar %>
-              </div>
-              <div class="col s6">
-                <p>
-                  New Game
-                </p>
-                <%= f.submit "New Game", class: "btn black" %>
-              </div>
-
-            </div>
-          <% end %>
+              <%= f.file_field :avatar %>
+              <br>
+          </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s7 push-s5 valign-wrapper">
+      <%= f.label(:submit, "Submit", class: "valign") %>
+      <br>
+      <%= f.submit "New Game", class: "btn waves-effect waves-light  valign black" %>
     </div>
   </div>
+  <% end %>
 </div>
