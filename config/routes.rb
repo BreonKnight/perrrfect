@@ -4,10 +4,10 @@ Rails.application.routes.draw do
     get "/users/:id/edit", to: "users#edit", as: "edit_user"
     get "/login", to: "sessions#new"
     get "/logout", to: "sessions#destroy"
-    get "/sessions", to: "sessions#create"
+    post "/sessions", to: "sessions#create"
 
     resources :games
-
+    resources :characters
     resources :games do
       resources :characters
     end

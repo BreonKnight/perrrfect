@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <h3 class="center-align">New Character</h3>
-      <%= form_for @character do |f| %>
+      <%= form_for @character, url: game_characters_path do |f| %>
         <div class="row">
           <div class="input-field col s12">
             <%= f.label(:name, "Character Name") %>
+            <br>
             <%= f.text_field :name %>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <%= f.label(:avatar, "Avatar") %>
+            <br>
+            <br>
             <%= f.file_field :avatar %>
           </div>
         </div>

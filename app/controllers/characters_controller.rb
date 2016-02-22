@@ -11,9 +11,12 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @game = Game.find(params[:game_id])
-    @character = @game.characters.build(char_params)
+    title = params[:game_id]
+    @game = Game.find_by(title: title)
+    char_params = params.require(:character).permit(:name)
+    @character = Character.create(char_params)
     if @character.save
+      @game.characters << @character
       flash[:notice] = "New Game has been added"
       redirect_to @character
     else
@@ -21,9 +24,4 @@ class CharactersController < ApplicationController
       redirect_to new_game_character
     end
   end
-
-  private
-    def char_params
-      params.require(:character).permit(:name)
-    end
 end
