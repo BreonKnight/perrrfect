@@ -8,4 +8,14 @@
     <%= image_tag "/images/smash.jpg", class: "responsive-img col s6" %>
     <%= image_tag "/images/streetfighter5.jpg", class: "responsive-img col s6" %>
   </div>
+
+  <div class="row">
+    <% @games.each do |game|  %>
+      <div class="col s4">
+          <%= link_to(game) do %>
+          <h1> <%= game.title %></h1>
+          <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
