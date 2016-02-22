@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     get "/sessions", to: "sessions#create"
 
     resources :games
+
+    resources :games do
+      resources :characters
+    end
 end
