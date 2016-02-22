@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222083123) do
+ActiveRecord::Schema.define(version: 20160222120518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "game_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_index "characters", ["game_id"], name: "index_characters_on_game_id", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -41,4 +54,5 @@ ActiveRecord::Schema.define(version: 20160222083123) do
     t.datetime "avatar_updated_at"
   end
 
+  add_foreign_key "characters", "games"
 end

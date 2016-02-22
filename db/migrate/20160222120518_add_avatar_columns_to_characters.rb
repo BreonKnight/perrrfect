@@ -1,4 +1,9 @@
 class AddAvatarColumnsToCharacters < ActiveRecord::Migration
-  def change
+  def up
+    add_attachment :characters, :avatar
+  end
+
+  def down
+    remove_attachment :characters, :avatar
   end
 end
