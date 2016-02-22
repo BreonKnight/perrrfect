@@ -1,16 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col s12 center-align">
-      <h1><%= @user.name.upcase %></h1>
-    </div>
     <div class="col s6">
-      <h3> Fight me <small></small></h3>
+      <h3> <%= @user.name %></h3>
       <%= image_tag @user.avatar.url, size: "320x426", class: "responsive-img" %>
-      <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+      <p> <strong> Name: </strong> <%= @user.first_name %> <%= @user.last_name %> </p>
       <!-- refactor 1 -->
-      <%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}"%>
+       <strong> Twitch Channel: </strong><%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}"%>
       <p>stream</p>
-      <p>Combos added</p>
+      <p> <strong> Combos Added: </strong> 20</p>
       <!-- add logic to let user login only -->
       <%= button_to "Edit", edit_user_path(@user), :method => :get, class: "btn black" %>
     </div>
