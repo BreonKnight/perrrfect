@@ -4,22 +4,28 @@
       <%= form_for @user do |f| %>
         <div class="input-field col s6">
           <%= f.label(:first_name, "First Name") %>
+          <br>
       	  <%= f.text_field :first_name %>
         </div>
         <div class="input-field col s6">
           <%= f.label(:last_name, "Last Name") %>
+          <br>
           <%= f.text_field :last_name %>
         </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
       <%= f.label(:last_name, "Twitch User Name") %>
+      <br>
       <%= f.text_field :twitch_name %>
     </div>
     </div>
   <div class="row">
     <div class="input-field col s6">
       <%= f.label(:avatar, "Avatar") %>
+      <br>
+      <br>
+      <br>
       <%= f.file_field :avatar %>
     </div>
   </div>

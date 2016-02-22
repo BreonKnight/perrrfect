@@ -21,7 +21,7 @@ class CharactersController < ApplicationController
       redirect_to new_game_character
     end
   end
-  
+
   private
     def char_params
       params.require(:character).permit(:name)
