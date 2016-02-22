@@ -36,16 +36,19 @@ class UsersController < ApplicationController
 
   def update
     user_id = params[:id]
-    user = User.name(user_id)
+    
+    user = User.find_by_name(user_id)
+
     user_edit_params = params.require(:user).permit(:first_name, :last_name, :twitch_name, :avatar)
-    # If we decide to let users update email address, email will be downcased before submission & update
+
     user.update_attributes(user_edit_params)
+
     redirect_to user_path(user)
   end
 
   def destroy
     user_id = params[:id]
-    user = User.find_by_userName(user_id)
+    user = User.find_by_name(user_id)
     user.destroy
     redirect_to root_path
   end
@@ -54,5 +57,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :name, :twitch_name, :email, :password, :avatar )
+    end
+
+    def set_user
+      user_id = params[:id] || current_user.id
+      @user = User.find_by_name(user_id)
     end
 end

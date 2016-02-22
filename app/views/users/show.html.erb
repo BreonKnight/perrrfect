@@ -7,13 +7,15 @@
       <h3> Fight me <small></small></h3>
       <%= image_tag @user.avatar.url, size: "320x426", class: "responsive-img" %>
       <p> <%= @user.first_name %> <%= @user.last_name %> </p>
-      <a href="http//www.twitch.tv/<%=@user.twitch_name %>/profile"><%= @user.twitch_name %></a>
+      <!-- refactor 1 -->
+      <%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}"%>
+      <p>stream</p>
       <p>Combos added</p>
+      <!-- add logic to let user login only -->
+      <%= button_to "Edit", edit_user_path(@user), :method => :get, class: "btn black" %>
     </div>
     <div class="col s6">
       <h3>Combos made</h3>
-
-
     </div>
   </div>
 </div>

@@ -13,27 +13,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-  <nav>
-    <div class="nav-wrapper black">
-      <a href="/" class="brand-logo">Perrfect</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper black">
+        <a href="/" class="brand-logo">Perrrfect</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <% if current_user %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Edit", edit_user_path(current_user) %></li>
+              <li><%= link_to "Log Out", logout_path %></li>
+                <% else %>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+              <li><%= link_to "Log In", login_path %></li>
+            <% end %>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
           <% if current_user %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Edit", edit_user_path(current_user) %></li>
             <li><%= link_to "Log Out", logout_path %></li>
               <% else %>
             <li><%= link_to "Sign Up", new_user_path %></li>
             <li><%= link_to "Log In", login_path %></li>
           <% end %>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
 
   <!-- Messages for loggin in and out -->
   <% flash.each do |name, msg| %>
