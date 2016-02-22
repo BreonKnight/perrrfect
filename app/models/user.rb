@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   end
   #bcrypt safe password
   has_secure_password
+
+  #authenticating user login
+  def self.confirm(params)
+  @user = User.find_by({email: params[:email]})
+  @user.try(:authenticate, params[:password])
+  end
 end

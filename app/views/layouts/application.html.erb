@@ -36,6 +36,14 @@
       </ul>
     </div>
   </nav>
+  
+  <!-- Messages for loggin in and out -->
+  <% flash.each do |name, msg| %>
+  <p>
+    <small> <%= name.capitalize %>: <%= msg %> </small>
+  </p>
+<% end %>
+
 
 <%= yield %>
 

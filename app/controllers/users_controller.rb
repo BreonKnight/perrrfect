@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     user_id = params[:id]
     user = User.find_by_userName(user_id)
     user.destroy
-    redirect_to root
+    redirect_to root_path
   end
 
   private
