@@ -1,0 +1,32 @@
+<h1>Sign up <small> Join us</small></h1>
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label(:first_name, "First Name") %>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div>
+  <div>
+    <%= f.label(:last_name, "Last Name") %>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+  <div>
+    <%= f.label(:name, "User Name") %>
+    <%= f.text_field :name, placeholder: "User Name" %>
+  </div>
+  <div>
+    <%= f.label(:twitch_name, "Twitch Name") %>
+    <%= f.text_field :twitch_name, placeholder: "Twitch Name" %>
+  </div>
+  <div>
+    <%= f.label(:email, "Email") %>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.label(:password, "Password") %>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <div >
+    <%= f.label(:avatar, "Upload an avatar") %>
+    <%= f.file_field :avatar %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %>
