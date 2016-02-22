@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-    root to: "users#index"
+    root to: "static_pages#home"
     resources :users
 end
