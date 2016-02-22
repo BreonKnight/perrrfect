@@ -1,9 +1,9 @@
 class AddAvatarColumnsToGames < ActiveRecord::Migration
   def up
-    add_attachment :users, :avatar
+    add_attachment :games, :avatar
   end
 
   def down
-    remove_attachment :users, :avatar
+    remove_attachment :games, :avatar
   end
 end
