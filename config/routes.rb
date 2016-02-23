@@ -8,7 +8,12 @@ Rails.application.routes.draw do
 
     resources :games
     resources :characters
+    
     resources :games do
       resources :characters
+    end
+
+    resources :characters do
+      resources :combos
     end
 end
