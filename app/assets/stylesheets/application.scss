@@ -11,8 +11,12 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require materialize
  *= require_self
  */
+ @import "materialize";
+ @import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
 
  body {
    display: flex;
@@ -23,3 +27,7 @@
  main {
    flex: 1 0 auto;
  }
+
+ .parallax-container {
+  height: 1000px;
+}

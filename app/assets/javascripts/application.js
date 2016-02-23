@@ -11,19 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require materialize-sprockets
 //= require angular-ui-router
 //= require jquery_ujs
 //= require angular
+//= require materialize
 //= require turbolinks
+//= require app
 //= require_tree .
-
-var ready;
-ready = function() {
-
-  $('.parallax').parallax();
-  $(".button-collapse").sideNav();
-
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
