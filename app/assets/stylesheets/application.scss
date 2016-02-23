@@ -14,6 +14,7 @@
  *= require materialize
  *= require_self
  */
+ @import url(https://fonts.googleapis.com/css?family=Bangers|News+Cycle:400,700);
  @import "materialize";
  @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
@@ -23,11 +24,23 @@ $primary-color: color("blue", "lighten-2") !default;
    min-height: 100vh;
    flex-direction: column;
  }
+ h3{
+   font-family: 'Bangers', cursive;
+ }
+
+ .hero-font{
+   font-family: 'Bangers', cursive;
+   font-size: 80px;
+ }
 
  main {
    flex: 1 0 auto;
  }
 
  .parallax-container {
-  height: 1000px;
+  height: 700px;
+}
+
+img.responsive-img.f{
+  height: 50px;
 }

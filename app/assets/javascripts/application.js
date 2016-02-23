@@ -16,6 +16,6 @@
 //= require jquery_ujs
 //= require angular
 //= require materialize
-//= require turbolinks
+//  turbolinks
 //= require app
 //= require_tree .
