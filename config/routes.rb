@@ -7,13 +7,10 @@ Rails.application.routes.draw do
     post "/sessions", to: "sessions#create"
     patch "/games/:game_id/characters/:id", to: "characters#update", as: "patch"
 
-    resources :games
-
     resources :games do
-      resources :characters
+      resources :characters do
+        resources :combos
+      end
     end
 
-    resources :characters do
-      resources :combos
-    end
 end

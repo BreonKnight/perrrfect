@@ -26,18 +26,11 @@ class GamesController < ApplicationController
     render :show
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
   private
 
     def game_params
-      params.require(:game).permit(:title, :avatar )
+      game_title = params[:title].gsub(/\s+/, "")
+      params.require(:game).permit(game_title, :avatar )
     end
 
 end
