@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <%= csrf_meta_tags %>
   <title>Perrrfect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' %>
 </head>
-<body>
+<body ng-app="comboTime" ng-controller="ComboMaker">
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper red">
@@ -55,6 +57,9 @@
 </main>
   <footer class="page-footer black">
     <div class="container">
+      <div>
+        {{test}}
+      </div>
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Perrrfect</h5>

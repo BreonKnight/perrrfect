@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize-sprockets
-//= require materialize
 //= require angular
 //= require angular-ui-router
+//= require angular-rails-templates
 //= require app
+//= require combo
 //= require_tree .
