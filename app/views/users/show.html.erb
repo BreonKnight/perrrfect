@@ -15,9 +15,9 @@
     <div class="col s6">
       <h3 class="card blue">Combos made</h3>
       <% users_combos(current_user).each do |combo| %>
-        <h5 class="white-text  black myFont">Combo <%= combo.combo_name  %> for <%= combo_character(combo.character_id)  %></h5>
+        <h5 class="white-text  black myFont center-align">Combo <%= combo.combo_name  %> for <%= combo_character(combo.character_id)  %></h5>
           <% combo.move.split(/\s*,\s*/).each do |move| %>
-            <%= link_to image_tag("ps/#{move}.svg", :class=>"btn white", :id=>"QCB") %>
+            <%= image_tag("ps/#{move}.svg", :class=>"btn white") %>
           <% end %>
       <% end %>
     </div>

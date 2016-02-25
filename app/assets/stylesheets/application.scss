@@ -44,6 +44,10 @@ $primary-color: color("blue", "lighten-2") !default;
    color: white
  }
 
+ .link{
+   color:blue;
+ }
+
  main {
    flex: 1 0 auto;
  }

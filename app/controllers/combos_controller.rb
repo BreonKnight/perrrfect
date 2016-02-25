@@ -26,7 +26,7 @@ class CombosController < ApplicationController
     if @combo.save
       @character.combos << @combo
       flash[:notice] = "You've added a new Combo!"
-      redirect_to game_character_combos_path
+      redirect_to game_character_path(game_id: title, id: @character.name)
     else
       flash[:error] = @combos.errors.full_messages.join(', ')
       redirect_to new_game_character_combo

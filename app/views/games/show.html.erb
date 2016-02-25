@@ -7,6 +7,13 @@
   </div>
   <div class="row">
     <h3 class="center-align card white">Characters <small></small></h3>
-    
+    <% characters_in_game(@game).each do |character| %>
+      <div class="col s4">
+        <%= link_to("/games/#{@game.title}/characters/#{character.name}") do %>
+        <h3 class="center-align card black"> <%= character.name %> </h3>
+        <% end %>
+        <%= image_tag character.avatar.url, size: "320x426", class: "responsive-img" %>
+      </div>
+    <% end %>
   </div>
 </div>

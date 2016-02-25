@@ -1,10 +1,18 @@
 <div class="container">
-  <div class="row">
+  <div class="row card white">
     <div class="col s6">
-      <h3><strong>Name:</strong> <%= @character.name %></h3>
+      <h3 class="card blue"><%= @character.name %></h3>
       <%= image_tag @character.avatar.url, size: "320x426", class: "responsive-img" %>
+      <%= button_to "New Combo", new_game_character_combo_path({character_id: @character}), :method => :get, class: "btn black" %>
     </div>
     <div class="col s6">
+      <h3 class="card blue">Character Combos</h3>
+      <% char_combos(@character).each do |combo| %>
+      <h5 class="white-text  black myFont center-align" class="card"><%= combo.combo_name %></h5>
+      <% combo.move.split(/\s*,\s*/).each do |move| %>
+        <%= image_tag("ps/#{move}.svg", :class=>"btn white") %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

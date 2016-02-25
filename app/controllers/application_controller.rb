@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include CharactersHelper
   include UsersHelper
+  include GamesHelper
 end
