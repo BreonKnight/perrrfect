@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     @game = Game.create(game_params)
     if @game.save
       flash[:notice] = "New Game has been added"
-      redirect_to @game
+      redirect_to game_path(@game)
     else
       flash[:error] = @game.errors.full_messages.join(', ')
       redirect_to new_game_path
@@ -29,8 +29,7 @@ class GamesController < ApplicationController
   private
 
     def game_params
-      game_title = params[:title].gsub(/\s+/, "")
-      params.require(:game).permit(game_title, :avatar )
+      params.require(:game).permit(:game_title, :avatar )
     end
 
 end
