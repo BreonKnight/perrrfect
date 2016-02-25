@@ -29,8 +29,6 @@ gem "paperclip", "~> 4.3"
 #materailize css
 gem 'materialize-sass'
 
-gem 'pg'
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
