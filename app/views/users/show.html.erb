@@ -1,18 +1,25 @@
 <div class="container">
-  <div class="row">
+  <div class="row card white">
     <div class="col s6">
-      <h3> <%= @user.name %></h3>
+      <h3 class="card blue"> <%= @user.name %></h3>
       <%= image_tag @user.avatar.url, size: "320x426", class: "responsive-img" %>
-      <p> <strong> Name: </strong> <%= @user.first_name %> <%= @user.last_name %> </p>
+      <p class="card blue"> <strong> Name: </strong> <%= @user.first_name %> <%= @user.last_name %> </p>
       <!-- refactor 1 -->
-       <strong> Twitch Channel: </strong><%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}"%>
-      <p>stream</p>
-      <p> <strong> Combos Added: </strong> 20</p>
+       <p class="card blue">
+         <strong> Twitch Channel: </strong><%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}" %>
+       </p>
+      <p class="card blue"> <strong> Combos Added: </strong> <%= user_combo_count(current_user) %></p>
       <!-- add logic to let user login only -->
       <%= button_to "Edit", edit_user_path(@user), :method => :get, class: "btn black" %>
     </div>
     <div class="col s6">
-      <h3>Combos made</h3>
+      <h3 class="card blue">Combos made</h3>
+      <% users_combos(current_user).each do |combo| %>
+        <h5 class="white-text  black myFont">Combo <%= combo.combo_name  %> for <%= combo_character(combo.character_id)  %></h5>
+          <% combo.move.split(/\s*,\s*/).each do |move| %>
+            <%= link_to image_tag("ps/#{move}.svg", :class=>"btn white", :id=>"QCB") %>
+          <% end %>
+      <% end %>
     </div>
   </div>
 </div>

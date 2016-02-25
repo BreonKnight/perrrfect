@@ -32,6 +32,17 @@ $primary-color: color("blue", "lighten-2") !default;
    font-family: 'Bangers', cursive;
    font-size: 80px;
  }
+ h4.white-text.center-align.text-darken-3.lighten-3{
+   font-family: 'Bangers', cursive;
+ }
+
+ .myFont{
+   font-family: News Cycle;
+ }
+
+ a{
+   color: white
+ }
 
  main {
    flex: 1 0 auto;
