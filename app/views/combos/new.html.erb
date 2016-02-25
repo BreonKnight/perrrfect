@@ -1,0 +1,64 @@
+<div class="container">
+  <h3 class="center-align">Create a Combo <br> <small>press below</small></h3>
+
+  <!-- <form>
+    <input type="text" ng-model="combo.name">
+  </form> -->
+  <div class="row card combo-input">
+    <div class="col s6">
+      <h3>Buttons</h3>
+      <%= link_to image_tag("ps/HK.svg", :class=>"btn white", :id=>"HK") %>
+      <%= link_to image_tag("ps/HP.svg", :class=>"btn white", :id=>"HP") %>
+      <%= link_to image_tag("ps/LK.svg", :class=>"btn white", :id=>"LK") %>
+      <%= link_to image_tag("ps/LP.svg", :class=>"btn white", :id=>"LP") %>
+      <%= link_to image_tag("ps/MK.svg", :class=>"btn white", :id=>"MK") %>
+      <%= link_to image_tag("ps/MP.svg", :class=>"btn white", :id=>"MP") %>
+    </div>
+    <div class="col s6">
+      <h3 >Directions</h3>
+      <%= link_to image_tag("ps/QCB.svg", :class=>"btn white", :id=>"QCB") %>
+      <%= link_to image_tag("ps/QCF.svg", :class=>"btn white", :id=>"QCF") %>
+      <%= link_to image_tag("ps/DOWNLEFT.svg", :class=>"btn white", :id=>"DOWNLEFT") %>
+      <%= link_to image_tag("ps/DOWNRIGHT.svg", :class=>"btn white", :id=>"DOWNRIGHT") %>
+      <%= link_to image_tag("ps/DOWN.svg", :class=>"btn white", :id=>"DOWN") %>
+      <%= link_to image_tag("ps/LEFT.svg", :class=>"btn white", :id=>"LEFT") %>
+      <%= link_to image_tag("ps/RIGHT.svg", :class=>"btn white", :id=>"RIGHT") %>
+      <%= link_to image_tag("ps/UPLEFT.svg", :class=>"btn white", :id=>"UPLEFT") %>
+      <%= link_to image_tag("ps/UPRIGHT.svg", :class=>"btn white", :id=>"UPRIGHT") %>
+      <%= link_to image_tag("ps/UP.svg", :class=>"btn white", :id=>"UP") %>
+    </div>
+  </div>
+  <div class="row card center-align">
+    <h3> Current Combo</h3>
+    <div class="col s12">
+
+      <ul id="combos-list">
+
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="row card">
+    <div class="col s12">
+      <input placeholder="Combo Name" id="combo_name" type="text">
+      <label for="combo_name">Combo Name</label>
+    </div>
+  </div> -->
+  <div class="row center-align white">
+    <h3 class="center-align blue-text">Combo Name</h3>
+    <div class="col s12">
+      <%= form_for @combo, url: game_character_combos_path do |f| %>
+        <%= f.label(:combo_name, "Combo Name", class:"red-text") %>
+        <%= f.text_field :combo_name %>
+        <%= f.text_field :move, hidden: false, :id => 'combo-form' %>
+    </div>
+  </div>
+  <div class="row red">
+    <div class="col s7 push-s5">
+      <%= submit_tag("Save Combo", class:"btn blue") %>
+
+    </div>
+          <% end %>
+  </div>
+    </div>
+  </div>
+</div>

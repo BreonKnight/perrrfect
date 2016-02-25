@@ -4,9 +4,10 @@ $(document).ready(function(){
 
   $('.parallax').parallax();
 
-  var combosArray = [];
+  var combosArray = new Array();
 
     $(".combo-input").on("click", function(event){
+
       event.preventDefault();
       console.log(event.toElement.alt)
       var clickedItem = (event.toElement.alt)
@@ -14,7 +15,11 @@ $(document).ready(function(){
       console.log(myItem);
       combosArray.push(myItem);
       console.log(combosArray)
-    });
+      var thisCombo = JSON.stringify(combosArray).replace(/['"[\[\]]+/g, '');
+      $('input#combo-form').text(thisCombo);
+      $('input#combo-form').val($('input#combo-form').val() + myItem + ",");
+
+      });
 
     $("#HK").on("click", function(event){
       event.preventDefault();
@@ -25,7 +30,7 @@ $(document).ready(function(){
     $("#HP").on("click", function(event){
       event.preventDefault();
       console.log('hi')
-      $("#combos-list").append("<li data-id='2'>" + '<img src="https://photos-6.dropbox.com/t/2/AADzELwpla2UR30UgXMH7Ocb-QFUUAuuSWwklVGQk_uF3Q/12/164983/png/32x32/3/1456358400/0/2/HP.svg/EMTkKxjBlaKiBSAHKAc/VCDgocXbcUwd_ufZV5xEcXUn0zzvI4EcPIJx3rEFKC0?size_mode=3&size=800x600">' + "</li>");
+      $("#combos-list").append("<li data-id='2'>" + '<img src="https://photos-3.dropbox.com/t/2/AABB7mm4rgdZXy16v1K5jtHb5vxVlKHLR8D8cHiXyf083g/12/164983/png/32x32/3/1456376400/0/2/HP.svg/EMTkKxjBlaKiBSAHKAc/VCDgocXbcUwd_ufZV5xEcXUn0zzvI4EcPIJx3rEFKC0?size_mode=3&size=1024x768">' + "</li>");
     });
 
     $("#LK").on("click", function(event){
