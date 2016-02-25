@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222120518) do
+ActiveRecord::Schema.define(version: 20160225041316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20160222120518) do
   end
 
   add_index "characters", ["game_id"], name: "index_characters_on_game_id", using: :btree
+
+  create_table "combos", force: :cascade do |t|
+    t.string   "combo_name"
+    t.string   "move"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "character_id"
+    t.integer  "user_id"
+  end
+
+  add_index "combos", ["character_id"], name: "index_combos_on_character_id", using: :btree
+  add_index "combos", ["user_id"], name: "index_combos_on_user_id", using: :btree
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -52,7 +64,13 @@ ActiveRecord::Schema.define(version: 20160222120518) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "combo_id"
   end
 
+  add_index "users", ["combo_id"], name: "index_users_on_combo_id", using: :btree
+
   add_foreign_key "characters", "games"
+  add_foreign_key "combos", "characters"
+  add_foreign_key "combos", "users"
+  add_foreign_key "users", "combos"
 end
