@@ -1,12 +1,12 @@
 <div class="container">
-  <h3 class="center-align">Create a Combo <br> <small>just click below</small></h3>
+  <h3 class="center-align card black white-text">Create a Combo <br> <small>just click below</small></h3>
 
   <!-- <form>
     <input type="text" ng-model="combo.name">
   </form> -->
   <div class="row card combo-input">
     <div class="col s6">
-      <h3>Buttons</h3>
+      <h3 class="card blue">Buttons</h3>
       <%= link_to image_tag("ps/HK.svg", :class=>"btn white", :id=>"HK") %>
       <%= link_to image_tag("ps/HP.svg", :class=>"btn white", :id=>"HP") %>
       <%= link_to image_tag("ps/LK.svg", :class=>"btn white", :id=>"LK") %>
@@ -15,7 +15,7 @@
       <%= link_to image_tag("ps/MP.svg", :class=>"btn white", :id=>"MP") %>
     </div>
     <div class="col s6">
-      <h3 >Directions</h3>
+      <h3 class="card blue" >Directions</h3>
       <%= link_to image_tag("ps/QCB.svg", :class=>"btn white", :id=>"QCB") %>
       <%= link_to image_tag("ps/QCF.svg", :class=>"btn white", :id=>"QCF") %>
       <%= link_to image_tag("ps/DOWNLEFT.svg", :class=>"btn white", :id=>"DOWNLEFT") %>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="row card center-align">
-    <h3> Current Combo</h3>
+    <h3 class="card blue"> Current Combo</h3>
     <div class="col s12">
 
       <ul id="combos-list">
@@ -37,14 +37,8 @@
       </ul>
     </div>
   </div>
-  <!-- <div class="row card">
-    <div class="col s12">
-      <input placeholder="Combo Name" id="combo_name" type="text">
-      <label for="combo_name">Combo Name</label>
-    </div>
-  </div> -->
   <div class="row center-align white">
-    <h3 class="center-align">Combo Name</h3>
+    <h3 class="center-align card blue"">Combo Name</h3>
     <div class="col s12 input-field">
       <%= form_for @combo, url: game_character_combos_path do |f| %>
         <%= f.label(:combo_name, "Combo Name") %>
