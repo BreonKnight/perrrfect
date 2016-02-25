@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 class="center-align">Create a Combo <br> <small>press below</small></h3>
+  <h3 class="center-align">Create a Combo <br> <small>just click below</small></h3>
 
   <!-- <form>
     <input type="text" ng-model="combo.name">
@@ -44,12 +44,12 @@
     </div>
   </div> -->
   <div class="row center-align white">
-    <h3 class="center-align blue-text">Combo Name</h3>
-    <div class="col s12">
+    <h3 class="center-align">Combo Name</h3>
+    <div class="col s12 input-field">
       <%= form_for @combo, url: game_character_combos_path do |f| %>
-        <%= f.label(:combo_name, "Combo Name", class:"red-text") %>
+        <%= f.label(:combo_name, "Combo Name") %>
         <%= f.text_field :combo_name %>
-        <%= f.text_field :move, hidden: false, :id => 'combo-form' %>
+        <%= f.text_field :move, hidden: true, :id => 'combo-form' %>
     </div>
   </div>
   <div class="row red">
