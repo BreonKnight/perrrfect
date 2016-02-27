@@ -4,13 +4,10 @@
       <% @games.each do |game|  %>
         <div class="col s6">
           <div class="card">
-            <h3 class=" center-align card blue white-text"> <%=game.title %></h3>
-            <%= link_to game, game_path(game) %>
+          <h3 class="center-align card blue white-text"><%= link_to "#{game.title}", game_path(game) %> </h3>
             <%= image_tag game.avatar.url, class: "responsive-img" %>
-
           </div>
         </div>
-
     <% end %>
   </div>
 </div>
