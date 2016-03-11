@@ -7,16 +7,17 @@ $(document).ready(function(){
   var combosArray = new Array();
 
     $(".combo-input").on("click", function(event){
-
+      //preventing page from reloading
       event.preventDefault();
-      console.log(event.toElement.alt)
+      //clicking the to get the name of the file
       var clickedItem = (event.toElement.alt)
+      //uppercasing the element
       var myItem = clickedItem.toUpperCase()
-      console.log(myItem);
-      combosArray.push(myItem);
-      console.log(combosArray)
-      var thisCombo = JSON.stringify(combosArray).replace(/['"[\[\]]+/g, '');
-      $('input#combo-form').text(thisCombo);
+
+      // combosArray.push(myItem);
+      // var thisCombo = JSON.stringify(combosArray).replace(/['"[\[\]]+/g, '');
+      // $('input#combo-form').text(thisCombo);
+
       $('input#combo-form').val($('input#combo-form').val() + myItem + ",");
 
       });

@@ -5,6 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-streetfighter5 = Game.create(title: "Street Fighter 5")
-streetfighter4 = Game.create(title: "Street Fighter 4")
