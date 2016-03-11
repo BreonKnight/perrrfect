@@ -26,6 +26,19 @@ class GamesController < ApplicationController
     render :show
   end
 
+  def edit
+    game_id = params[:id]
+    @game = Game.find_by_title(game_id)
+  end
+
+  def update
+    game = params[:id]
+    game = Game.find_by_title(game)
+    game_edit_params = params.require(:game).permit(:game_title, :avatar)
+    game.update_attributes(game_edit_params)
+    redirect_to game_path(game)
+  end
+
   private
 
     def game_params
