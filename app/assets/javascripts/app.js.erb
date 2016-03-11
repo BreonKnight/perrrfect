@@ -18,6 +18,8 @@ $(document).ready(function(){
       // var thisCombo = JSON.stringify(combosArray).replace(/['"[\[\]]+/g, '');
       // $('input#combo-form').text(thisCombo);
 
+      //sending items to an invisible form as strings to the database to be
+      //referenced on when characters
       $('input#combo-form').val($('input#combo-form').val() + myItem + ",");
 
       });
