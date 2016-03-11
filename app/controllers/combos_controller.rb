@@ -21,7 +21,11 @@ class CombosController < ApplicationController
     name = params[:character_id]
     #Game.first.characters.first.combos
     @character = Game.find_by(title: title).characters.find_by_name(name)
-    combo_params = params.require(:combo).permit(:combo_name, :move).merge(user_id: current_user.id)
+    if current_user
+      combo_params = params.require(:combo).permit(:combo_name, :move).merge(user_id: current_user.id)
+    else
+      combo_params = params.require(:combo).permit(:combo_name, :move)
+    end
     @combo = Combo.create(combo_params)
     if @combo.save
       @character.combos << @combo
