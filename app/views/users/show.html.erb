@@ -3,7 +3,7 @@
     <div class="col s6">
       <h3 class="card blue"> <%= @user.name %></h3>
       <%= image_tag @user.avatar.url, size: "320x426", class: "responsive-img" %>
-      <p class="card blue"> <strong> Name: </strong> <%= @user.first_name %> <%= @user.last_name %> </p>
+      <p class="card blue"> <strong class="black-text"> Name: </strong> <%= @user.first_name %> <%= @user.last_name %> </p>
       <!-- refactor 1 -->
        <p class="card blue">
          <strong> Twitch Channel: </strong><%=link_to @user.twitch_name,"http://www.twitch.tv/#{@user.twitch_name}" %>
